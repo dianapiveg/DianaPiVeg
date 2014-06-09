@@ -1,0 +1,58 @@
+﻿@model EmployeeQuiz.Models.Employee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Estilo.css" />
+    <title>WorkerView</title>
+</head>
+<body>
+    <div class ="Index">
+        <br />
+        <br />
+        <map>
+        <center>
+             <img src="@Url.Content(Model.PhotoPath)"
+            alt="Sample Image"
+            width="250" height="300" /></center>
+        <center>
+@{
+    try {
+     
+        <p>
+            <b>ID:</b>@Model.Id
+       </p>
+        <p>
+            <b>NOMBRE: </b>@Model.Name
+        </p>
+        <p>
+            <b>APELLIDOS: </b>@Model.FirstLastname @Model.SecondLastname
+        </p>
+        <p> 
+            <b>OCUPASION: </b>@Model.Position
+        </p>
+        <p>
+            <b>NUMERO DE CONTROL: </b>@Model.Wage
+        </p>
+        <p>
+            <b>SEXO: </b>@Model.Sex
+        </p>
+       
+       
+      }
+      catch(Exception){
+       @:<b>Error: FAVOR DE INGRESAR EL ID DEL ALUMNO</b>
+      }
+    
+}
+       </center>
+       </map>
+    </div>
+</body>
+</html>
